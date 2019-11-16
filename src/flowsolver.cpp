@@ -16,6 +16,10 @@ void FlowSolver::addEdge(int s, int t){
     node* target = _Node[t];
     edge e = _G.new_edge(*source, *target);
 
+    _Cap.init(_G);
+    _Cost.init(_G);
+    _Flow.init(_G);
+
     _Edge[std::pair<int, int>(s, t)] = &e;
     _Cost[e] = 0;
     _Cap[e] = 0;
@@ -40,6 +44,13 @@ void FlowSolver::addEdgeCapacity(int s, int t, int capacity){
     _Cap[*e] += capacity;
 
     return;
+}
+
+int FlowSolver::getEdgeCapacity(int s, int t){
+
+    edge* e = _Edge[std::pair<int, int>(s, t)];
+    
+    return _Cap[*e];
 }
 
 

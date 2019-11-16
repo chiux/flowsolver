@@ -7,7 +7,8 @@ int main(void){
 
     fs.addNode(1);
     fs.addNode(2);
-    //fs.addEdge(1, 2);
+    fs.addEdge(1, 2);
+    fs.addEdgeCapacity(1, 2, 8);
 
 
 

@@ -16,6 +16,7 @@ class FlowSolver{
         void addEdge(int s, int t);
         void addEdgeCost(int s, int t, int cost);
         void addEdgeCapacity(int s, int t, int capacity);
+        int  getEdgeCapacity(int s, int t);
         bool solveMinCostFlow(int s, int t);
 
     

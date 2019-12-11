@@ -17,13 +17,15 @@ class FlowSolver{
         void addEdgeCost(int s, int t, int cost);
         void addEdgeCapacity(int s, int t, int capacity);
         int  getEdgeCapacity(int s, int t);
-        bool solveMinCostFlow(int s, int t);
+        int solveMinCostFlow(int s, int t);
+        void printEdge();
+        void initEdgeArrays();
 
     
     private:
         graph _G;
-        std::map < int, node* > _Node;
-        std::map < std::pair<int, int>, edge* > _Edge;
+        std::map < int, node > _Node;
+        std::map < std::pair<int, int>, edge > _Edge;
         edge_array<int> _Cap;
         edge_array<int> _Cost;
         edge_array<int> _Flow;
